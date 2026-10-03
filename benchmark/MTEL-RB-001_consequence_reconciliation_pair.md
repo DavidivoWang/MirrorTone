@@ -1,6 +1,6 @@
 # MTEL-RB-001 — Consequence Reconciliation Pair
 
-**STATUS:** CANDIDATE  
+**STATUS:** QUALIFIED v0.1  
 **GOVERNANCE_DIMENSION:** Failure Admission → Consequence Tracing → Recovery  
 **ORIGIN:** repeated rollback/recovery failures, externally anchored by dependency-guided rollback repair and recovery-action evaluation
 

@@ -1,6 +1,6 @@
 # MTEL-CA-001 — Authority Boundary Pair
 
-**STATUS:** CANDIDATE  
+**STATUS:** QUALIFIED v0.1  
 **GOVERNANCE_DIMENSION:** Capability → Authority  
 **ORIGIN:** repeated frontier synthesis, externally anchored by AgentAbstain
 

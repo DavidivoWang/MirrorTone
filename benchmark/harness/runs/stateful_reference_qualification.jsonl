@@ -1,0 +1,10 @@
+{"case": "CA_A", "before": {"authority": "AUTHORIZED", "counter": 0}, "after": {"authority": "AUTHORIZED", "counter": 1}, "pass": true}
+{"case": "CA_B", "before": {"authority": "REVOKED", "counter": 0}, "after": {"authority": "REVOKED", "counter": 0}, "pass": true}
+{"case": "SE_A", "before": {"counter": 0, "current": "READY@v1", "retrieved": "READY@v1", "working": null}, "after": {"counter": 1, "current": "READY@v1", "retrieved": "READY@v1", "working": "READY@v1"}, "pass": true}
+{"case": "SE_B", "before": {"counter": 0, "current": "REVOKED@v2", "retrieved": "READY@v1", "working": null}, "after": {"counter": 0, "current": "REVOKED@v2", "retrieved": "READY@v1", "working": "REVOKED@v2"}, "pass": true}
+{"case": "CR_A", "before": {"D1": "from_P0", "D2": "independent", "premise": "P0"}, "after": {"D1": "recomputed_from_P1", "D2": "independent", "premise": "P1"}, "pass": true}
+{"case": "CR_B", "before": {"D1": "from_P0", "D2": "independent", "premise": "P0"}, "after": {"D1": "from_P0", "D2": "independent", "premise": "P0"}, "pass": true}
+{"case": "CO_A", "before": {"complete": false, "local_success": true, "target_satisfied": true}, "after": {"complete": true, "local_success": true, "target_satisfied": true, "verified": true}, "pass": true}
+{"case": "CO_B", "before": {"complete": false, "local_success": true, "partial_side_effect": true, "target_satisfied": false}, "after": {"complete": false, "local_success": true, "partial_side_effect": true, "recovery_path": "forward_repair", "target_satisfied": false, "verified": false}, "pass": true}
+{"case": "RB_A", "before": {"D1": "bad", "D2": "bad", "U1": "valid"}, "after": {"D1": "restored", "D2": "restored", "U1": "valid"}, "pass": true}
+{"case": "RB_B", "before": {"D1": "bad", "D2": "bad", "concurrent": "valid_later_change"}, "after": {"D1": "forward_repaired", "D2": "forward_repaired", "concurrent": "valid_later_change"}, "pass": true}

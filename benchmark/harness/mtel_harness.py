@@ -120,7 +120,7 @@ def selected(suite, ids):
 
 
 def invoke(command, request, timeout):
-    argv = shlex.split(command, posix=os.name != "nt")
+    argv = command if os.name == "nt" else shlex.split(command)
     if not argv:
         raise ValueError("empty agent command")
     process = subprocess.run(

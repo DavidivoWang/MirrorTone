@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 import shlex
 import subprocess
 import sys
@@ -119,7 +120,7 @@ def selected(suite, ids):
 
 
 def invoke(command, request, timeout):
-    argv = shlex.split(command)
+    argv = shlex.split(command, posix=os.name != "nt")
     if not argv:
         raise ValueError("empty agent command")
     process = subprocess.run(

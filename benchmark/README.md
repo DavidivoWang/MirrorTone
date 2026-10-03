@@ -4,6 +4,13 @@ This directory is reserved for governance benchmark and regression cases that em
 
 The benchmark should grow from observed failures, not from a desire to fill categories.
 
+## Current candidates
+
+- [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization
+- [`MTEL-SE-001 — Fresh-State Admission Pair`](MTEL-SE-001_fresh_state_admission_pair.md) — tests retrieved state vs current action-bearing state
+
+Both remain **CANDIDATE**. Neither is a qualified benchmark claim yet.
+
 ## Candidate admission rule
 
 A case becomes a benchmark candidate only when the underlying pattern is:

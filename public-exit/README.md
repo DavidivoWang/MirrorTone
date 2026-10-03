@@ -8,6 +8,7 @@ It does not replace intake, verification, or internal research. It only receives
 
 - [`001 — Capability Is Not Authority`](001_capability_is_not_authority.md)
 - [`002 — Retrieval Is Not Current State`](002_retrieval_is_not_current_state.md)
+- [`003 — Correction Is Not Rebind`](003_correction_is_not_rebind.md)
 
 ## Three outputs
 

@@ -1,6 +1,6 @@
 # MTEL-CO-001 — Completion Evidence Pair
 
-**STATUS:** CANDIDATE  
+**STATUS:** QUALIFIED v0.1  
 **GOVERNANCE_DIMENSION:** Execution → Verification → Completion  
 **ORIGIN:** repeated completion-illusion failures, externally anchored by Traverse and state-based agent evaluation work
 

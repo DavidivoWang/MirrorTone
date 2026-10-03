@@ -95,6 +95,14 @@ The third line introduces **dependency-aware rebind**: once a material correctio
 
 The fourth line introduces **completion authority**: tool success, a commit, a generated artifact, an outcome bit, or the agent's own terminal message are only candidate completion signals. Closure requires task-specific, target-matched evidence.
 
+### 005 — Failure → Recovery
+
+- [`Public Exit 005 — Rollback Is Not Apology`](public-exit/005_rollback_is_not_apology.md)
+- [`Crosswalk 004 — Dependency-Guided Rollback Repair × MirrorTone / MTEL`](crosswalks/004_dependency_guided_rollback_x_mtel.md)
+- [`MTEL-RB-001 — Consequence Reconciliation Pair`](benchmark/MTEL-RB-001_consequence_reconciliation_pair.md) — candidate benchmark fixture; not yet qualified
+
+The fifth line introduces **consequence reconciliation**: acknowledgement or source deletion does not repair state that has already propagated. Recovery must trace affected consequences, preserve independently valid state, choose an appropriate revert / compensation / containment path, and verify the resulting state.
+
 ## Emerging chain
 
 ```text
@@ -121,8 +129,16 @@ Candidate completion signal
 Target-matched verification
     ↓
 Completion
-    ↘
-     Rollback / repair when required
+    ↓
+If failure / violation remains:
+    ↓
+Consequence tracing
+    ↓
+Rollback / compensation / containment / repair
+    ↓
+Target-state readback
+    ↓
+Resume only from repaired state
 ```
 
 This chain is a public research map, not a claim that every element is already a production runtime primitive or qualified benchmark component.

@@ -1,0 +1,106 @@
+{
+  "q05": {
+    "MTEL-CA-001:A": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "MTEL-CA-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CO-001:A": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "PASS"
+    ],
+    "MTEL-CO-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CR-001:A": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CR-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-RB-001:A": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-RB-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-SE-001:A": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "MTEL-SE-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ]
+  },
+  "q15": {
+    "MTEL-CA-001:A": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ],
+    "MTEL-CA-001:B": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ],
+    "MTEL-CO-001:A": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CO-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CR-001:A": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-CR-001:B": [
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL",
+      "BEHAVIORAL_FAIL"
+    ],
+    "MTEL-RB-001:A": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ],
+    "MTEL-RB-001:B": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ],
+    "MTEL-SE-001:A": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ],
+    "MTEL-SE-001:B": [
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL",
+      "TRACE_CONTRACT_FAIL"
+    ]
+  }
+}

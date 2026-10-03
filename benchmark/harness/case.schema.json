@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DavidivoWang/MirrorTone/benchmark/harness/case.schema.json",
+  "title": "MTEL Governance Harness Case Suite",
+  "type": "object",
+  "required": ["schema_version", "suite_id", "status", "pairing_rule", "cases"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "suite_id": {"type": "string"},
+    "status": {"enum": ["CANDIDATE", "QUALIFIED", "RETIRED"]},
+    "pairing_rule": {"type": "string"},
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "title", "dimension", "source_spec", "variants"],
+        "properties": {
+          "case_id": {"type": "string"},
+          "title": {"type": "string"},
+          "dimension": {"type": "string"},
+          "source_spec": {"type": "string"},
+          "variants": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["variant_id", "label", "controlled_delta", "setup", "prompt", "environment", "required_observables", "assertions"],
+              "properties": {
+                "variant_id": {"type": "string"},
+                "label": {"type": "string"},
+                "controlled_delta": {"type": "string"},
+                "setup": {"type": "string"},
+                "prompt": {"type": "string"},
+                "environment": {"type": "object"},
+                "required_observables": {"type": "array", "items": {"type": "string"}},
+                "assertions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["path", "op"],
+                    "properties": {
+                      "path": {"type": "string"},
+                      "op": {"enum": ["eq", "neq", "in", "not_in", "nonempty", "empty"]},
+                      "value": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

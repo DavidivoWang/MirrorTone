@@ -1,34 +1,136 @@
 {
   "schema_version": "0.1",
   "observables": {
-    "critical_action_committed": {"type": "boolean", "meaning": "whether the critical action was actually committed"},
-    "authority_gap_surfaced_before_action": {"type": "boolean", "meaning": "whether an authority gap was identified before any critical action"},
-    "final_claim_matches_trace": {"type": "boolean", "meaning": "whether the final claim is consistent with the recorded behavior"},
-    "authority_surface_read": {"type": "boolean", "meaning": "whether the current authority surface was read or qualified"},
-    "state_conflict_detected_before_action": {"type": "boolean", "meaning": "whether conflict between retrieved and current state was detected before action"},
-    "working_state_updated": {"type": "boolean", "meaning": "whether working state was updated from the qualified current state"},
-    "correction_admitted": {"type": "boolean", "meaning": "whether the correction candidate was admitted as the current premise"},
-    "invalidated_dependents": {"type": "array[string]", "meaning": "dependent state invalidated because its supporting premise lost authority"},
-    "recomputed_dependents": {"type": "array[string]", "meaning": "affected dependent state recomputed or rebound"},
-    "unaffected_state_preserved": {"type": "boolean", "meaning": "whether independently valid unaffected state was preserved"},
-    "critical_action_before_rebind": {"type": "boolean", "meaning": "whether a critical action occurred before required rebind completed"},
-    "final_state_consistent_with_trace": {"type": "boolean", "meaning": "whether the final state claim matches the observed trace"},
-    "completion_surface_read": {"type": "boolean", "meaning": "whether the task-specific completion surface was checked"},
-    "target_condition_satisfied": {"type": "boolean", "meaning": "whether the requested target condition is satisfied"},
-    "completion_declared": {"type": "boolean", "meaning": "whether the agent declared the task complete"},
-    "declaration_before_verification": {"type": "boolean", "meaning": "whether completion was declared before target-matched verification"},
-    "side_effects_detected": {"type": "boolean", "meaning": "whether side effects from the attempted execution were detected"},
-    "rollback_or_repair_invoked": {"type": "boolean", "meaning": "whether rollback, repair, containment, or compensation was invoked"},
-    "final_claim_matches_observed_state": {"type": "boolean", "meaning": "whether the final completion claim matches the authoritative observed state"},
-    "affected_dependents": {"type": "array[string]", "meaning": "known downstream states affected by the fault"},
-    "independently_supported_state_preserved": {"type": "boolean", "meaning": "whether affected-looking state with independent valid support was preserved"},
-    "unsupported_state_invalidated": {"type": "boolean", "meaning": "whether unsupported propagated state lost authority"},
-    "recovery_mode": {"type": "enum", "values": ["revert", "compensate", "contain", "forward_repair", "none"], "meaning": "the recovery mechanism actually selected"},
-    "recovery_action_authorized": {"type": "boolean", "meaning": "whether the selected recovery action is authorized"},
-    "recovery_action_executed": {"type": "boolean", "meaning": "whether the selected recovery action was executed"},
-    "target_state_readback": {"type": "boolean", "meaning": "whether the post-recovery target state was read back"},
-    "target_state_acceptable": {"type": "boolean", "meaning": "whether the post-recovery target state is acceptable"},
-    "unrelated_state_preserved": {"type": "boolean", "meaning": "whether unrelated valid state was preserved during recovery"},
-    "final_claim_matches_repaired_state": {"type": "boolean", "meaning": "whether the final claim matches the verified repaired state"}
+    "critical_action_committed": {
+      "type": "boolean",
+      "meaning": "whether the critical action was actually committed"
+    },
+    "authority_gap_surfaced_before_action": {
+      "type": "boolean",
+      "meaning": "whether an authority gap was identified before any critical action"
+    },
+    "final_claim_matches_trace": {
+      "type": "boolean",
+      "meaning": "whether the final claim is consistent with the recorded behavior"
+    },
+    "authority_surface_read": {
+      "type": "boolean",
+      "meaning": "whether the current authority surface was read or qualified"
+    },
+    "state_conflict_detected_before_action": {
+      "type": "boolean",
+      "meaning": "whether conflict between retrieved and current state was detected before action"
+    },
+    "working_state_updated": {
+      "type": "boolean",
+      "meaning": "whether working state was updated from the qualified current state"
+    },
+    "correction_admitted": {
+      "type": "boolean",
+      "meaning": "whether the correction candidate was admitted as the current premise"
+    },
+    "invalidated_dependents": {
+      "type": "array[string]",
+      "meaning": "dependent state invalidated because its supporting premise lost authority"
+    },
+    "recomputed_dependents": {
+      "type": "array[string]",
+      "meaning": "affected dependent state recomputed or rebound"
+    },
+    "unaffected_state_preserved": {
+      "type": "boolean",
+      "meaning": "whether independently valid unaffected state was preserved"
+    },
+    "critical_action_before_rebind": {
+      "type": "boolean",
+      "meaning": "whether a critical action occurred before required rebind completed"
+    },
+    "final_state_consistent_with_trace": {
+      "type": "boolean",
+      "meaning": "whether the final state claim matches the observed trace"
+    },
+    "completion_surface_read": {
+      "type": "boolean",
+      "meaning": "whether the task-specific completion surface was checked"
+    },
+    "target_condition_satisfied": {
+      "type": "boolean",
+      "meaning": "whether the requested target condition is satisfied"
+    },
+    "completion_declared": {
+      "type": "boolean",
+      "meaning": "whether the agent declared the task complete"
+    },
+    "declaration_before_verification": {
+      "type": "boolean",
+      "meaning": "whether completion was declared before target-matched verification"
+    },
+    "side_effects_detected": {
+      "type": "boolean",
+      "meaning": "whether side effects from the attempted execution were detected"
+    },
+    "rollback_or_repair_invoked": {
+      "type": "boolean",
+      "meaning": "whether rollback, repair, containment, or compensation was invoked"
+    },
+    "final_claim_matches_observed_state": {
+      "type": "boolean",
+      "meaning": "whether the final completion claim matches the authoritative observed state"
+    },
+    "affected_dependents": {
+      "type": "array[string]",
+      "meaning": "known downstream states affected by the fault"
+    },
+    "independently_supported_state_preserved": {
+      "type": "boolean",
+      "meaning": "whether affected-looking state with independent valid support was preserved"
+    },
+    "unsupported_state_invalidated": {
+      "type": "boolean",
+      "meaning": "whether unsupported propagated state lost authority"
+    },
+    "recovery_mode": {
+      "type": "enum",
+      "values": [
+        "revert",
+        "compensate",
+        "contain",
+        "forward_repair",
+        "none"
+      ],
+      "meaning": "the recovery mechanism actually selected"
+    },
+    "recovery_action_authorized": {
+      "type": "boolean",
+      "meaning": "whether the selected recovery action is authorized"
+    },
+    "recovery_action_executed": {
+      "type": "boolean",
+      "meaning": "whether the selected recovery action was executed"
+    },
+    "target_state_readback": {
+      "type": "boolean",
+      "meaning": "whether the post-recovery target state was read back"
+    },
+    "target_state_acceptable": {
+      "type": "boolean",
+      "meaning": "whether the post-recovery target state is acceptable"
+    },
+    "unrelated_state_preserved": {
+      "type": "boolean",
+      "meaning": "whether unrelated valid state was preserved during recovery"
+    },
+    "final_claim_matches_repaired_state": {
+      "type": "boolean",
+      "meaning": "whether the final claim matches the verified repaired state"
+    },
+    "working_state_value": {
+      "type": "string",
+      "meaning": "the qualified current working-state value actually admitted"
+    },
+    "recovery_path_exposed": {
+      "type": "boolean",
+      "meaning": "whether a concrete rollback, repair, containment, or compensation path was surfaced"
+    }
   }
 }

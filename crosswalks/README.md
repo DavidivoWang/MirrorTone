@@ -9,6 +9,7 @@ A crosswalk is not a product ranking and does not assume that MirrorTone / MTEL 
 - [`001 — STALE × MirrorTone / MTEL`](001_stale_x_mtel.md) — memory invalidation, state admission, premise resistance, and downstream rebind
 - [`002 — Supersede × MirrorTone / MTEL`](002_supersede_x_mtel.md) — supersession, current-value maintenance, dependency invalidation, and scoped rebind
 - [`003 — Traverse × MirrorTone / MTEL`](003_traverse_x_mtel.md) — hidden trajectory failure, outcome verification, completion authority, and rollback
+- [`004 — Dependency-Guided Rollback Repair × MirrorTone / MTEL`](004_dependency_guided_rollback_x_mtel.md) — propagated fault recovery, dependency tracing, preservation, selective replay, and compensation boundaries
 
 ## Minimal crosswalk template
 
@@ -19,7 +20,7 @@ For each system or capability, examine:
 | Capability | What new capability or execution surface is introduced? |
 | Authority | How is permission granted, scoped, delegated, or revoked? |
 | Evidence | What evidence is accepted for state, action, or claim formation? |
-| Rollback | What can be reversed, withdrawn, corrected, or contained? |
+| Rollback | What can be reversed, withdrawn, corrected, compensated, or contained? |
 | Completion | What qualifies the action or task as actually complete? |
 
 ## Verdict vocabulary

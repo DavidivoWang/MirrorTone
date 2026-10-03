@@ -22,6 +22,15 @@ The first controlled real-model replay is now preserved as inspectable evidence:
 
 The replay uses controlled simulated state, not real external mutation. Results are separated into `PASS`, `BEHAVIORAL_FAIL`, and `TRACE_CONTRACT_FAIL`; they are model/config-specific single-run evidence and must not be collapsed into a general model ranking or production-conformance claim.
 
+## Evaluator precision / false-pass audit v0.1
+
+The first replay also exposed weaknesses in the measuring instrument itself. The evaluator has therefore been tightened before further model comparison:
+
+- [`Evaluator Precision / False-Pass Audit v0.1`](harness/evaluator_precision_audit_v0_1.md)
+- [`precision_audit.py`](harness/precision_audit.py) — executable adversarial regression test
+
+The audit adds exact dependency/state checks, separates simulation-level recovery-path evidence from actual external recovery execution, and verifies that eight deliberately misleading traces are blocked while the positive 10-variant protocol smoke suite still passes.
+
 ## Current candidates
 
 - [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization

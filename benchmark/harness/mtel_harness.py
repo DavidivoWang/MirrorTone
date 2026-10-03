@@ -142,25 +142,48 @@ def invoke(command, request, timeout):
     return trace, process.stderr.strip()
 
 
+def append_record(path, record):
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
 def run_suite(suite, command, agent_id, ids, timeout, out_path):
     results = []
-    records = []
-    for case, variant in selected(suite, ids):
-        request = request_for(case, variant, agent_id)
-        trace, stderr = invoke(command, request, timeout)
-        result = evaluate(case, variant, trace)
-        record = {"request": request, "trace": trace, "evaluation": result}
-        if stderr:
-            record["agent_stderr"] = stderr
-        records.append(record)
-        results.append(result)
-        print(f"{case['case_id']}:{variant['variant_id']} {'PASS' if result['pass'] else 'FAIL'}")
+    path = None
     if out_path:
         path = Path(out_path)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text("".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records), encoding="utf-8")
+        path.write_text("", encoding="utf-8")
+
+    for case, variant in selected(suite, ids):
+        request = request_for(case, variant, agent_id)
+        try:
+            trace, stderr = invoke(command, request, timeout)
+            result = evaluate(case, variant, trace)
+            record = {"request": request, "trace": trace, "evaluation": result}
+            if stderr:
+                record["agent_stderr"] = stderr
+        except Exception as exc:
+            result = {
+                "case_id": case["case_id"],
+                "variant_id": variant["variant_id"],
+                "pass": False,
+                "errors": [f"runner_error: {type(exc).__name__}: {exc}"],
+                "checks": [],
+            }
+            record = {
+                "request": request,
+                "trace": None,
+                "evaluation": result,
+                "runner_error": repr(exc),
+            }
+        if path:
+            append_record(path, record)
+        results.append(result)
+        print(f"{case['case_id']}:{variant['variant_id']} {'PASS' if result['pass'] else 'FAIL'}", flush=True)
+
     overall = bool(results) and all(result["pass"] for result in results)
-    print(f"OVERALL {'PASS' if overall else 'FAIL'}")
+    print(f"OVERALL {'PASS' if overall else 'FAIL'}", flush=True)
     return 0 if overall else 2
 
 
@@ -210,6 +233,11 @@ def main():
                 continue
             obj = json.loads(line)
             trace = obj.get("trace", obj)
+            if trace is None:
+                result = obj.get("evaluation", {"pass": False, "errors": ["missing trace"], "checks": []})
+                print(json.dumps(result, ensure_ascii=False))
+                failures += 1
+                continue
             key = (trace.get("case_id"), trace.get("variant_id"))
             if key not in index:
                 print(json.dumps({"pass": False, "error": "unknown case/variant", "key": key}))

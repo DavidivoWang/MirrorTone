@@ -66,8 +66,18 @@ Not every new AI development belongs here. A signal only enters the public layer
 
 ## Start here
 
+### 001 — Capability → Authority
+
 - [`Public Exit 001 — Capability Is Not Authority`](public-exit/001_capability_is_not_authority.md)
 - [`MTEL-CA-001 — Authority Boundary Pair`](benchmark/MTEL-CA-001_authority_boundary_pair.md) — candidate benchmark fixture; not yet qualified
+
+### 002 — Retrieval → Current State
+
+- [`Public Exit 002 — Retrieval Is Not Current State`](public-exit/002_retrieval_is_not_current_state.md)
+- [`Crosswalk 001 — STALE × MirrorTone / MTEL`](crosswalks/001_stale_x_mtel.md)
+- [`MTEL-SE-001 — Fresh-State Admission Pair`](benchmark/MTEL-SE-001_fresh_state_admission_pair.md) — candidate benchmark fixture; not yet qualified
+
+The second line introduces **state admission**: retrieved information can be relevant evidence without automatically becoming current action-bearing state.
 
 ## Current status
 

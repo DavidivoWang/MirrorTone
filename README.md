@@ -79,6 +79,42 @@ Not every new AI development belongs here. A signal only enters the public layer
 
 The second line introduces **state admission**: retrieved information can be relevant evidence without automatically becoming current action-bearing state.
 
+### 003 — Correction → Rebind
+
+- [`Public Exit 003 — Correction Is Not Rebind`](public-exit/003_correction_is_not_rebind.md)
+- [`Crosswalk 002 — Supersede × MirrorTone / MTEL`](crosswalks/002_supersede_x_mtel.md)
+- [`MTEL-CR-001 — Dependency Rebind Pair`](benchmark/MTEL-CR-001_dependency_rebind_pair.md) — candidate benchmark fixture; not yet qualified
+
+The third line introduces **dependency-aware rebind**: once a material correction is admitted, downstream state supported by the superseded premise must lose action authority until it is re-evaluated. Rebind should remain scoped to affected dependencies rather than globally resetting unrelated state.
+
+## Emerging chain
+
+```text
+Capability
+    ↓
+Authority
+    ↓
+Evidence
+    ↓
+State admission
+    ↓
+Current state
+    ↓
+Correction / supersession
+    ↓
+Dependency invalidation
+    ↓
+Rebind
+    ↓
+Action / decision
+    ↓
+Completion
+    ↘
+     Rollback when required
+```
+
+This chain is a public research map, not a claim that every element is already a production runtime primitive or qualified benchmark component.
+
 ## Current status
 
 This repository is a **public-facing research entry point**, not a declaration that every MirrorTone / MTEL component is production-ready or formally released.

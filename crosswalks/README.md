@@ -4,6 +4,10 @@ Crosswalks translate external AI systems into a small set of governance question
 
 A crosswalk is not a product ranking and does not assume that MirrorTone / MTEL and the external system occupy the same layer.
 
+## Current crosswalks
+
+- [`001 — STALE × MirrorTone / MTEL`](001_stale_x_mtel.md) — memory invalidation, state admission, premise resistance, and downstream rebind
+
 ## Minimal crosswalk template
 
 For each system or capability, examine:

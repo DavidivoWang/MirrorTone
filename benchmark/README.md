@@ -9,6 +9,7 @@ The benchmark should grow from observed failures, not from a desire to fill cate
 - [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization
 - [`MTEL-SE-001 — Fresh-State Admission Pair`](MTEL-SE-001_fresh_state_admission_pair.md) — tests retrieved state vs current action-bearing state
 - [`MTEL-CR-001 — Dependency Rebind Pair`](MTEL-CR-001_dependency_rebind_pair.md) — tests correction admission, dependency invalidation, and scoped rebind
+- [`MTEL-CO-001 — Completion Evidence Pair`](MTEL-CO-001_completion_evidence_pair.md) — tests local success signals against target-matched completion evidence
 
 All remain **CANDIDATE**. None is a qualified benchmark claim yet.
 

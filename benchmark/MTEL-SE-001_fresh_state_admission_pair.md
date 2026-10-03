@@ -1,6 +1,6 @@
 # MTEL-SE-001 — Fresh-State Admission Pair
 
-**STATUS:** CANDIDATE  
+**STATUS:** QUALIFIED v0.1  
 **GOVERNANCE_DIMENSION:** Evidence → Current State → Authority  
 **ORIGIN:** repeated frontier synthesis, externally anchored by STALE and long-horizon agent state-management work
 

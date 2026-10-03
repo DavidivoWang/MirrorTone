@@ -61,7 +61,7 @@ Not every new AI development belongs here. A signal only enters the public layer
 
 - [`governance-primitives/`](governance-primitives/) — the five recurring governance primitives
 - [`crosswalks/`](crosswalks/) — compact comparisons between external AI systems and the MTEL governance frame
-- [`benchmark/`](benchmark/) — candidate regression and benchmark cases derived from repeated, verifiable failure patterns
+- [`benchmark/`](benchmark/) — qualified v0.1 governance fixtures, evaluator regressions, and experimental model replay evidence
 - [`public-exit/`](public-exit/) — short public probes distilled from frontier research
 
 ## Start here
@@ -69,13 +69,13 @@ Not every new AI development belongs here. A signal only enters the public layer
 ### 001 — Capability → Authority
 
 - [`Public Exit 001 — Capability Is Not Authority`](public-exit/001_capability_is_not_authority.md)
-- [`MTEL-CA-001 — Authority Boundary Pair`](benchmark/MTEL-CA-001_authority_boundary_pair.md) — candidate benchmark fixture; not yet qualified
+- [`MTEL-CA-001 — Authority Boundary Pair`](benchmark/MTEL-CA-001_authority_boundary_pair.md) — **QUALIFIED v0.1 benchmark fixture**
 
 ### 002 — Retrieval → Current State
 
 - [`Public Exit 002 — Retrieval Is Not Current State`](public-exit/002_retrieval_is_not_current_state.md)
 - [`Crosswalk 001 — STALE × MirrorTone / MTEL`](crosswalks/001_stale_x_mtel.md)
-- [`MTEL-SE-001 — Fresh-State Admission Pair`](benchmark/MTEL-SE-001_fresh_state_admission_pair.md) — candidate benchmark fixture; not yet qualified
+- [`MTEL-SE-001 — Fresh-State Admission Pair`](benchmark/MTEL-SE-001_fresh_state_admission_pair.md) — **QUALIFIED v0.1 benchmark fixture**
 
 The second line introduces **state admission**: retrieved information can be relevant evidence without automatically becoming current action-bearing state.
 
@@ -83,7 +83,7 @@ The second line introduces **state admission**: retrieved information can be rel
 
 - [`Public Exit 003 — Correction Is Not Rebind`](public-exit/003_correction_is_not_rebind.md)
 - [`Crosswalk 002 — Supersede × MirrorTone / MTEL`](crosswalks/002_supersede_x_mtel.md)
-- [`MTEL-CR-001 — Dependency Rebind Pair`](benchmark/MTEL-CR-001_dependency_rebind_pair.md) — candidate benchmark fixture; not yet qualified
+- [`MTEL-CR-001 — Dependency Rebind Pair`](benchmark/MTEL-CR-001_dependency_rebind_pair.md) — **QUALIFIED v0.1 benchmark fixture**
 
 The third line introduces **dependency-aware rebind**: once a material correction is admitted, downstream state supported by the superseded premise must lose action authority until it is re-evaluated. Rebind should remain scoped to affected dependencies rather than globally resetting unrelated state.
 
@@ -91,7 +91,7 @@ The third line introduces **dependency-aware rebind**: once a material correctio
 
 - [`Public Exit 004 — Completion Is Not Self-Declared Success`](public-exit/004_completion_is_not_self_declared_success.md)
 - [`Crosswalk 003 — Traverse × MirrorTone / MTEL`](crosswalks/003_traverse_x_mtel.md)
-- [`MTEL-CO-001 — Completion Evidence Pair`](benchmark/MTEL-CO-001_completion_evidence_pair.md) — candidate benchmark fixture; not yet qualified
+- [`MTEL-CO-001 — Completion Evidence Pair`](benchmark/MTEL-CO-001_completion_evidence_pair.md) — **QUALIFIED v0.1 benchmark fixture**
 
 The fourth line introduces **completion authority**: tool success, a commit, a generated artifact, an outcome bit, or the agent's own terminal message are only candidate completion signals. Closure requires task-specific, target-matched evidence.
 
@@ -99,7 +99,7 @@ The fourth line introduces **completion authority**: tool success, a commit, a g
 
 - [`Public Exit 005 — Rollback Is Not Apology`](public-exit/005_rollback_is_not_apology.md)
 - [`Crosswalk 004 — Dependency-Guided Rollback Repair × MirrorTone / MTEL`](crosswalks/004_dependency_guided_rollback_x_mtel.md)
-- [`MTEL-RB-001 — Consequence Reconciliation Pair`](benchmark/MTEL-RB-001_consequence_reconciliation_pair.md) — candidate benchmark fixture; not yet qualified
+- [`MTEL-RB-001 — Consequence Reconciliation Pair`](benchmark/MTEL-RB-001_consequence_reconciliation_pair.md) — **QUALIFIED v0.1 benchmark fixture**
 
 The fifth line introduces **consequence reconciliation**: acknowledgement or source deletion does not repair state that has already propagated. Recovery must trace affected consequences, preserve independently valid state, choose an appropriate revert / compensation / containment path, and verify the resulting state.
 
@@ -141,9 +141,13 @@ Target-state readback
 Resume only from repaired state
 ```
 
-This chain is a public research map, not a claim that every element is already a production runtime primitive or qualified benchmark component.
+This chain is a public research map. The first five benchmark fixture semantics are QUALIFIED v0.1; this does not make every chain element a production runtime primitive or certify any provider/model/runtime.
 
 ## Current status
+
+The first five MTEL governance benchmark fixtures are **QUALIFIED v0.1** for fixture semantics, evaluator behavior, false-pass regression, and stateful sandbox instantiation. See [`Qualification Decision v0.1`](benchmark/harness/qualification_decision_v0_1.md).
+
+Model replay results remain experimental and configuration-specific. No provider agent, MirrorTone runtime, deployment, or production system is certified by this qualification.
 
 This repository is a **public-facing research entry point**, not a declaration that every MirrorTone / MTEL component is production-ready or formally released.
 

@@ -193,7 +193,10 @@ def main():
         return 0
 
     if args.cmd == "selftest":
-        mock = f"{shlex.quote(sys.executable)} {shlex.quote(str(ROOT / 'mock_agent.py'))}"
+        if os.name == "nt":
+            mock = f'"{sys.executable}" "{ROOT / "mock_agent.py"}"'
+        else:
+            mock = f"{shlex.quote(sys.executable)} {shlex.quote(str(ROOT / 'mock_agent.py'))}"
         return run_suite(suite, mock, "protocol-smoke", [], 30, "")
 
     if args.cmd == "run":

@@ -12,6 +12,16 @@ The first five candidate families are now compiled into an executable provider-n
 
 The harness is **executable but still CANDIDATE**. A protocol smoke test is not a model benchmark result, and a passing real-model run is not by itself a production-conformance claim.
 
+## Real model replay v0.1
+
+The first controlled real-model replay is now preserved as inspectable evidence:
+
+- [`Replay memo — 2026-10-03`](harness/replay_2026-10-03.md)
+- [`qwen2.5:1.5b-instruct raw trace`](harness/runs/2026-10-03_qwen2.5-1.5b-instruct-v3.jsonl)
+- [`qwen2.5:0.5b-instruct raw trace`](harness/runs/2026-10-03_qwen2.5-0.5b-instruct-v3.jsonl)
+
+The replay uses controlled simulated state, not real external mutation. Results are separated into `PASS`, `BEHAVIORAL_FAIL`, and `TRACE_CONTRACT_FAIL`; they are model/config-specific single-run evidence and must not be collapsed into a general model ranking or production-conformance claim.
+
 ## Current candidates
 
 - [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization

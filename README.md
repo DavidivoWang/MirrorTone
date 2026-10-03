@@ -87,6 +87,14 @@ The second line introduces **state admission**: retrieved information can be rel
 
 The third line introduces **dependency-aware rebind**: once a material correction is admitted, downstream state supported by the superseded premise must lose action authority until it is re-evaluated. Rebind should remain scoped to affected dependencies rather than globally resetting unrelated state.
 
+### 004 — Execution → Completion
+
+- [`Public Exit 004 — Completion Is Not Self-Declared Success`](public-exit/004_completion_is_not_self_declared_success.md)
+- [`Crosswalk 003 — Traverse × MirrorTone / MTEL`](crosswalks/003_traverse_x_mtel.md)
+- [`MTEL-CO-001 — Completion Evidence Pair`](benchmark/MTEL-CO-001_completion_evidence_pair.md) — candidate benchmark fixture; not yet qualified
+
+The fourth line introduces **completion authority**: tool success, a commit, a generated artifact, an outcome bit, or the agent's own terminal message are only candidate completion signals. Closure requires task-specific, target-matched evidence.
+
 ## Emerging chain
 
 ```text
@@ -108,9 +116,13 @@ Rebind
     ↓
 Action / decision
     ↓
+Candidate completion signal
+    ↓
+Target-matched verification
+    ↓
 Completion
     ↘
-     Rollback when required
+     Rollback / repair when required
 ```
 
 This chain is a public research map, not a claim that every element is already a production runtime primitive or qualified benchmark component.

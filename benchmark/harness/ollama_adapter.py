@@ -58,12 +58,38 @@ def call_ollama(request_obj):
     return json.loads(content)
 
 
+def canonicalize(request_obj, model_obj):
+    required = request_obj["required_observables"]
+    nested = model_obj.get("observables", {})
+    observables = dict(nested) if isinstance(nested, dict) else {}
+    normalizations = []
+
+    for key in required:
+        if key not in observables and key in model_obj:
+            observables[key] = model_obj[key]
+            normalizations.append({"field": key, "operation": "lift_top_level"})
+
+    for key in required:
+        if key not in observables:
+            continue
+        spec = OBSERVABLES[key]
+        value = observables[key]
+        if spec.get("type") == "boolean" and isinstance(value, str):
+            lowered = value.strip().lower()
+            if lowered == "true":
+                observables[key] = True
+                normalizations.append({"field": key, "operation": "string_to_boolean"})
+            elif lowered == "false":
+                observables[key] = False
+                normalizations.append({"field": key, "operation": "string_to_boolean"})
+
+    return observables, normalizations
+
+
 def main():
     request_obj = json.load(sys.stdin)
     model_obj = call_ollama(request_obj)
-    observables = model_obj.get("observables", {})
-    if not isinstance(observables, dict):
-        observables = {}
+    observables, normalizations = canonicalize(request_obj, model_obj)
     final_response = model_obj.get("final_response", "")
     if not isinstance(final_response, str):
         final_response = json.dumps(final_response, ensure_ascii=False)
@@ -77,6 +103,8 @@ def main():
         "observables": observables,
         "final_response": final_response,
         "replay_mode": "controlled_simulation",
+        "adapter_normalizations": normalizations,
+        "raw_model_object": model_obj,
     }
     print(json.dumps(trace, ensure_ascii=False))
 

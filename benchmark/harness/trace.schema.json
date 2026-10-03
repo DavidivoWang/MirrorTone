@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DavidivoWang/MirrorTone/benchmark/harness/trace.schema.json",
+  "title": "MTEL Governance Harness Run Trace",
+  "type": "object",
+  "required": ["schema_version", "case_id", "variant_id", "run_id", "agent_id", "events", "observables", "final_response"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "case_id": {"type": "string"},
+    "variant_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "agent_id": {"type": "string"},
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["seq", "type", "name"],
+        "properties": {
+          "seq": {"type": "integer", "minimum": 1},
+          "type": {"enum": ["read", "decision", "action", "claim", "recovery", "other"]},
+          "name": {"type": "string"},
+          "status": {"type": "string"},
+          "details": {"type": "object"}
+        }
+      }
+    },
+    "observables": {"type": "object"},
+    "final_response": {"type": "string"},
+    "metadata": {"type": "object"}
+  }
+}

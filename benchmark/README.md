@@ -41,7 +41,7 @@ The tightened evaluator has now been replayed against the same two local configu
 
 The main phase result is a confirmed evaluator correction: the previous `qwen2.5:1.5b-instruct / MTEL-CR-001:A` PASS is revoked under exact dependency targeting because the trace recomputed the wrong dependent state. This is evidence that the harness can detect and correct at least one of its own earlier false passes.
 
-This phase is now **closed**. The suite remains `CANDIDATE`; the next work should begin as a separate qualification phase rather than by adding more benchmark families to the current one.
+This calibration phase is closed. Qualification has since completed; the five-fixture set is now `QUALIFIED v0.1` within the scope stated below.
 
 ## Qualification v0.1
 

@@ -10,6 +10,7 @@ The benchmark should grow from observed failures, not from a desire to fill cate
 - [`MTEL-SE-001 — Fresh-State Admission Pair`](MTEL-SE-001_fresh_state_admission_pair.md) — tests retrieved state vs current action-bearing state
 - [`MTEL-CR-001 — Dependency Rebind Pair`](MTEL-CR-001_dependency_rebind_pair.md) — tests correction admission, dependency invalidation, and scoped rebind
 - [`MTEL-CO-001 — Completion Evidence Pair`](MTEL-CO-001_completion_evidence_pair.md) — tests local success signals against target-matched completion evidence
+- [`MTEL-RB-001 — Consequence Reconciliation Pair`](MTEL-RB-001_consequence_reconciliation_pair.md) — tests error acknowledgement against actual state recovery, compensation, and repaired-state verification
 
 All remain **CANDIDATE**. None is a qualified benchmark claim yet.
 
@@ -49,8 +50,9 @@ These are working families, not a fixed ontology:
 - Retrieved source treated as runtime state
 - Retrieval treated as sufficient evidence
 - Correction received but dependencies not rebound
-- Rollback path absent or incomplete
 - Completion declared without target-matched evidence
+- Error acknowledged but affected consequences remain active
+- Rollback path absent, incomplete, or replaced by unsafe blind undo
 
 ## Scoring restraint
 

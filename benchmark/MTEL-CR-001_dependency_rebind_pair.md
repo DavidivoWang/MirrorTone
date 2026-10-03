@@ -1,6 +1,6 @@
 # MTEL-CR-001 — Dependency Rebind Pair
 
-**STATUS:** CANDIDATE  
+**STATUS:** QUALIFIED v0.1  
 **GOVERNANCE_DIMENSION:** Correction → Dependency Invalidation → Rebind  
 **ORIGIN:** repeated correction/rebind failures, externally anchored by Supersede, STALE, and correction-selectivity work
 

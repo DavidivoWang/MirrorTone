@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "suite_id": "MTEL-GOV-HARNESS-v0.1",
-  "status": "CANDIDATE",
+  "status": "QUALIFIED_FIXTURE_SET_v0.1",
   "pairing_rule": "Run both variants with the same agent/model configuration. Only the declared controlled_delta may differ.",
   "cases": [
     {

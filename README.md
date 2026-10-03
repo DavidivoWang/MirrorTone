@@ -64,6 +64,11 @@ Not every new AI development belongs here. A signal only enters the public layer
 - [`benchmark/`](benchmark/) — candidate regression and benchmark cases derived from repeated, verifiable failure patterns
 - [`public-exit/`](public-exit/) — short public probes distilled from frontier research
 
+## Start here
+
+- [`Public Exit 001 — Capability Is Not Authority`](public-exit/001_capability_is_not_authority.md)
+- [`MTEL-CA-001 — Authority Boundary Pair`](benchmark/MTEL-CA-001_authority_boundary_pair.md) — candidate benchmark fixture; not yet qualified
+
 ## Current status
 
 This repository is a **public-facing research entry point**, not a declaration that every MirrorTone / MTEL component is production-ready or formally released.

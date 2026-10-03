@@ -120,7 +120,8 @@ def selected(suite, ids):
 
 
 def invoke(command, request, timeout):
-    argv = command if os.name == "nt" else shlex.split(command)
+    use_shell = os.name == "nt"
+    argv = command if use_shell else shlex.split(command)
     if not argv:
         raise ValueError("empty agent command")
     process = subprocess.run(
@@ -130,6 +131,7 @@ def invoke(command, request, timeout):
         capture_output=True,
         timeout=timeout,
         check=False,
+        shell=use_shell,
     )
     if process.returncode != 0:
         raise RuntimeError(f"agent command failed rc={process.returncode}: {process.stderr.strip()}")

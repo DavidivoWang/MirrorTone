@@ -10,7 +10,7 @@ The first five candidate families are now compiled into an executable provider-n
 
 - [`benchmark/harness/`](harness/) — unified case manifest, trace contract, deterministic PASS/FAIL evaluator, command adapter protocol, and protocol self-test
 
-The harness is **executable but still CANDIDATE**. A protocol smoke test is not a model benchmark result, and a passing real-model run is not by itself a production-conformance claim.
+The five-fixture harness set is **QUALIFIED v0.1 for fixture semantics, evaluator behavior, and stateful instantiation**. This qualification does not imply that any tested model, provider agent, MirrorTone runtime, or production system conforms to MTEL.
 
 ## Real model replay v0.1
 
@@ -43,7 +43,14 @@ The main phase result is a confirmed evaluator correction: the previous `qwen2.5
 
 This phase is now **closed**. The suite remains `CANDIDATE`; the next work should begin as a separate qualification phase rather than by adding more benchmark families to the current one.
 
-## Current candidates
+## Qualification v0.1
+
+- [`Qualification Decision / Final Close`](harness/qualification_decision_v0_1.md)
+- [`Stateful reference qualification`](harness/stateful_reference_qualification.py) — 10/10 A/B variants exercised against actual mutable sandbox state
+- [`Model-mediated state-changing probe`](harness/stateful_tool_probe.py) — preserves before/after state and exposes unauthorized mutation when it occurs
+- Three-seed repeatability traces for 0.5B and 1.5B, plus a 7B B-side sentinel replay, are retained under `harness/runs/`.
+
+## Qualified fixtures
 
 - [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization
 - [`MTEL-SE-001 — Fresh-State Admission Pair`](MTEL-SE-001_fresh_state_admission_pair.md) — tests retrieved state vs current action-bearing state
@@ -51,7 +58,7 @@ This phase is now **closed**. The suite remains `CANDIDATE`; the next work shoul
 - [`MTEL-CO-001 — Completion Evidence Pair`](MTEL-CO-001_completion_evidence_pair.md) — tests local success signals against target-matched completion evidence
 - [`MTEL-RB-001 — Consequence Reconciliation Pair`](MTEL-RB-001_consequence_reconciliation_pair.md) — tests error acknowledgement against actual state recovery, compensation, and repaired-state verification
 
-All remain **CANDIDATE**. None is a qualified benchmark claim yet.
+All five are **QUALIFIED v0.1 as benchmark fixtures**. Model/provider conformance remains separate and experimental.
 
 ## Candidate admission rule
 

@@ -1,8 +1,16 @@
 # MTEL Governance Benchmark
 
-This directory is reserved for governance benchmark and regression cases that emerge from repeated, verifiable failure patterns.
+This directory contains candidate governance benchmark and regression cases derived from repeated, verifiable failure patterns.
 
 The benchmark should grow from observed failures, not from a desire to fill categories.
+
+## Executable harness v0.1
+
+The first five candidate families are now compiled into an executable provider-neutral harness:
+
+- [`benchmark/harness/`](harness/) — unified case manifest, trace contract, deterministic PASS/FAIL evaluator, command adapter protocol, and protocol self-test
+
+The harness is **executable but still CANDIDATE**. A protocol smoke test is not a model benchmark result, and a passing real-model run is not by itself a production-conformance claim.
 
 ## Current candidates
 
@@ -42,6 +50,8 @@ ROLLBACK_OR_RECOVERY_EXPECTATION:
 STATUS: CANDIDATE / QUALIFIED / RETIRED
 ```
 
+The executable representation is defined in [`harness/case.schema.json`](harness/case.schema.json); run traces are defined in [`harness/trace.schema.json`](harness/trace.schema.json).
+
 ## Example failure families
 
 These are working families, not a fixed ontology:
@@ -56,6 +66,6 @@ These are working families, not a fixed ontology:
 
 ## Scoring restraint
 
-Do not introduce aggregate scores until individual case semantics, evidence requirements, and pass/fail criteria are stable enough to support them.
+Do not introduce aggregate scores until individual case semantics, evidence requirements, pass/fail criteria, and real replay instrumentation are stable enough to support them.
 
 The first goal is an inspectable test surface, not a leaderboard.

@@ -31,6 +31,18 @@ The first replay also exposed weaknesses in the measuring instrument itself. The
 
 The audit adds exact dependency/state checks, separates simulation-level recovery-path evidence from actual external recovery execution, and verifies that eight deliberately misleading traces are blocked while the positive 10-variant protocol smoke suite still passes.
 
+## Tightened replay / verdict delta v0.2
+
+The tightened evaluator has now been replayed against the same two local configurations and compared against the preserved v0.1 traces:
+
+- [`Tightened Replay / Verdict Delta v0.2`](harness/tightened_replay_verdict_delta_v0_2.md)
+- [`qwen2.5:0.5b-instruct tightened raw trace`](harness/runs/2026-10-03_qwen2.5-0.5b-instruct-v4-tightened.jsonl)
+- [`qwen2.5:1.5b-instruct tightened raw trace`](harness/runs/2026-10-03_qwen2.5-1.5b-instruct-v4-tightened.jsonl)
+
+The main phase result is a confirmed evaluator correction: the previous `qwen2.5:1.5b-instruct / MTEL-CR-001:A` PASS is revoked under exact dependency targeting because the trace recomputed the wrong dependent state. This is evidence that the harness can detect and correct at least one of its own earlier false passes.
+
+This phase is now **closed**. The suite remains `CANDIDATE`; the next work should begin as a separate qualification phase rather than by adding more benchmark families to the current one.
+
 ## Current candidates
 
 - [`MTEL-CA-001 — Authority Boundary Pair`](MTEL-CA-001_authority_boundary_pair.md) — tests capability vs authorization

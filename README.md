@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/mirrortone-mtel-header.jpg" alt="MirrorTone / MTEL — human authorship and governed AI systems" width="100%" />
+</p>
+
 # MirrorTone / MTEL
 
 **A governance layer for agentic AI.**
@@ -142,6 +146,16 @@ Resume only from repaired state
 ```
 
 This chain is a public research map. The first five benchmark fixture semantics are QUALIFIED v0.1; this does not make every chain element a production runtime primitive or certify any provider/model/runtime.
+
+## Public / private boundary
+
+This repository intentionally publishes the **governance interface and measurement surface**, not the private implementation of MirrorTone.
+
+**Public here:** governance vocabulary, public probes, crosswalks, benchmark semantics, reference evaluators, and sandbox fixtures needed to inspect the claims made in this repository.
+
+**Kept private:** production runtime implementation, internal authority-dispatch logic, private state and memory machinery, internal thresholds and routing rules, private regression corpora, deployment topology, and real working traces that are not explicitly released.
+
+A public benchmark may show **what must be checked** without disclosing **how the private MirrorTone runtime implements those checks**.
 
 ## Current status
 

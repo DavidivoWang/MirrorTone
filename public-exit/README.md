@@ -10,6 +10,7 @@ It does not replace intake, verification, or internal research. It only receives
 - [`002 — Retrieval Is Not Current State`](002_retrieval_is_not_current_state.md)
 - [`003 — Correction Is Not Rebind`](003_correction_is_not_rebind.md)
 - [`004 — Completion Is Not Self-Declared Success`](004_completion_is_not_self_declared_success.md)
+- [`005 — Rollback Is Not Apology`](005_rollback_is_not_apology.md)
 
 ## Three outputs
 

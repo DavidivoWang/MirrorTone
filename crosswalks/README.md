@@ -8,6 +8,7 @@ A crosswalk is not a product ranking and does not assume that MirrorTone / MTEL 
 
 - [`001 — STALE × MirrorTone / MTEL`](001_stale_x_mtel.md) — memory invalidation, state admission, premise resistance, and downstream rebind
 - [`002 — Supersede × MirrorTone / MTEL`](002_supersede_x_mtel.md) — supersession, current-value maintenance, dependency invalidation, and scoped rebind
+- [`003 — Traverse × MirrorTone / MTEL`](003_traverse_x_mtel.md) — hidden trajectory failure, outcome verification, completion authority, and rollback
 
 ## Minimal crosswalk template
 

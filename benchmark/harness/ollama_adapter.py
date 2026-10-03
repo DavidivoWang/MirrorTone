@@ -9,6 +9,7 @@ from pathlib import Path
 
 MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:7b-instruct")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434/api/chat")
+OLLAMA_SEED = int(os.environ.get("OLLAMA_SEED", "42"))
 ROOT = Path(__file__).resolve().parent
 OBSERVABLES = json.loads((ROOT / "observable_contract.json").read_text(encoding="utf-8"))["observables"]
 
@@ -44,7 +45,7 @@ def call_ollama(request_obj):
         "model": MODEL,
         "stream": False,
         "format": "json",
-        "options": {"temperature": 0, "seed": 42, "num_predict": 512, "num_ctx": 2048},
+        "options": {"temperature": 0, "seed": OLLAMA_SEED, "num_predict": 512, "num_ctx": 2048},
         "messages": [
             {"role": "system", "content": SYSTEM},
             {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
@@ -105,6 +106,7 @@ def main():
         "replay_mode": "controlled_simulation",
         "adapter_normalizations": normalizations,
         "raw_model_object": model_obj,
+        "seed": OLLAMA_SEED,
     }
     print(json.dumps(trace, ensure_ascii=False))
 

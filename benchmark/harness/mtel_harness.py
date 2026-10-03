@@ -61,6 +61,8 @@ def check(trace, assertion):
         ok = exists and value not in (None, "", [], {})
     elif op == "empty":
         ok = exists and value in (None, "", [], {})
+    elif op == "set_eq":
+        ok = exists and isinstance(value, list) and isinstance(expected, list) and sorted(value) == sorted(expected)
     else:
         return False, {"error": f"unknown op {op}"}
     return ok, {"path": assertion["path"], "op": op, "expected": expected, "actual": value, "exists": exists}

@@ -4,6 +4,11 @@ This directory is the public-facing exit from verified frontier research.
 
 It does not replace intake, verification, or internal research. It only receives a signal after those stages have produced enough support to justify a reusable public question or engineering candidate.
 
+## Current public exits
+
+- [`001 — Capability Is Not Authority`](001_capability_is_not_authority.md)
+- [`002 — Retrieval Is Not Current State`](002_retrieval_is_not_current_state.md)
+
 ## Three outputs
 
 ### PUBLIC_EXIT

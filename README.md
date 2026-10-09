@@ -157,6 +157,10 @@ This repository intentionally publishes the **governance interface and measureme
 
 A public benchmark may show **what must be checked** without disclosing **how the private MirrorTone runtime implements those checks**.
 
+## Rights and reuse
+
+Public availability, attribution, and permission to reuse are distinct. See [Rights, Attribution and Reuse Notice](NOTICE.md) for the current rights boundary. The notice does not establish a repository-wide license.
+
 ## Current status
 
 The first five MTEL governance benchmark fixtures are **QUALIFIED v0.1** for fixture semantics, evaluator behavior, false-pass regression, and stateful sandbox instantiation. See [`Qualification Decision v0.1`](benchmark/harness/qualification_decision_v0_1.md).
